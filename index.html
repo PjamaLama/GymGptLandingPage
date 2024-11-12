@@ -6,11 +6,13 @@
 -->
 <html>
 	<head>
-		<title>Solid State by HTML5 UP</title>
+		<title>GymGPT - AI Powered Workout Generator</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/animations.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="assets/js/animations.js" defer></script>
 	</head>
 	<body class="is-preload">
 
@@ -19,8 +21,22 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
+						<div class="header-content">
+							<div class="logo">
+								<img src="assets/images/branding/gymgpt-logo.png" alt="GymGPT Logo" height="40">
+							</div>
+							<h1><a href="index.html">GymGPT</a></h1>
+						</div>
+						<nav class="main-nav">
+							<ul>
+								<li><a href="#how-it-works">How It Works</a></li>
+								<li><a href="#why-gymgpt">Why GymGPT</a></li>
+								<li><a href="#features">Features</a></li>
+								<li><a href="#reviews">Reviews</a></li>
+								<li><a href="#download" class="button primary">Download Now</a></li>
+							</ul>
+						</nav>
+						<nav class="mobile-nav">
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
@@ -31,23 +47,137 @@
 							<h2>Menu</h2>
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
+								<li><a href="#how-it-works">How It Works</a></li>
+								<li><a href="#why-gymgpt">Why GymGPT</a></li>
+								<li><a href="#features">Features</a></li>
+								<li><a href="#reviews">Reviews</a></li>
+								<li><a href="#download">Download</a></li>
+								<li><a href="#contact">Contact</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
-
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+							<div class="banner-content">
+								<div class="banner-text">
+									<div class="logo"><span class="icon fa-dumbbell"></span></div>
+									<h2>Welcome to GymGPT</h2>
+									<p>Your Personal AI Workout Generator - Get customized workout plans powered by artificial intelligence</p>
+									<ul class="actions">
+										<li><a href="#download" class="button primary">Download Now</a></li>
+									</ul>
+								</div>
+								<div class="banner-image mobile-center">
+									<img src="images/app-screen6.png" alt="GymGPT App Screenshot" />
+								</div>
+							</div>
 						</div>
 					</section>
+
+				<!-- How It Works Section -->
+				<section id="how-it-works" class="wrapper style2">
+					<div class="inner">
+						<h2 class="major">How It Works</h2>
+						<div class="steps-container">
+							<div class="step">
+								<span class="step-number">1</span>
+								<h3>Download & Sign Up</h3>
+								<p>Create your account and tell us about your fitness goals</p>
+							</div>
+							<div class="step">
+								<span class="step-number">2</span>
+								<h3>AI Analysis</h3>
+								<p>Our AI analyzes your goals, fitness level, and available equipment</p>
+							</div>
+							<div class="step">
+								<span class="step-number">3</span>
+								<h3>Get Your Plan</h3>
+								<p>Receive your personalized workout plan instantly</p>
+							</div>
+							<div class="step">
+								<span class="step-number">4</span>
+								<h3>Track & Adapt</h3>
+								<p>Track your progress while AI adapts your plan</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Why GymGPT Section -->
+				<section id="why-gymgpt" class="wrapper style3">
+					<div class="inner">
+						<h2 class="major">Why Choose GymGPT</h2>
+						<div class="grid">
+							<div class="reason">
+								<span class="icon solid fa-brain"></span>
+								<h3>AI-Powered Intelligence</h3>
+								<p>Advanced algorithms create perfectly tailored workouts</p>
+							</div>
+							<div class="reason">
+								<span class="icon solid fa-sync"></span>
+								<h3>Adaptive Programming</h3>
+								<p>Workouts that evolve with your progress</p>
+							</div>
+							<div class="reason">
+								<span class="icon solid fa-mobile-alt"></span>
+								<h3>Easy to Use</h3>
+								<p>Intuitive interface designed for seamless experience</p>
+							</div>
+							<div class="reason">
+								<span class="icon solid fa-chart-line"></span>
+								<h3>Results Driven</h3>
+								<p>Proven methodology for reaching your fitness goals</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Reviews Section -->
+				<section id="reviews" class="wrapper style1">
+					<div class="inner">
+						<h2 class="major">What Users Say</h2>
+						<div class="reviews-grid">
+							<div class="review">
+								<div class="review-content">
+									<p>"GymGPT has completely transformed my workout routine. The AI suggestions are spot-on!"</p>
+									<div class="reviewer">
+										<img src="images/reviewer1.jpg" alt="Sarah M." class="avatar">
+										<div class="reviewer-info">
+											<h4>Sarah M.</h4>
+											<p>6 months user</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="review">
+								<div class="review-content">
+									<p>"As a busy professional, having an AI trainer in my pocket is exactly what I needed."</p>
+									<div class="reviewer">
+										<img src="images/reviewer2.jpg" alt="John D." class="avatar">
+										<div class="reviewer-info">
+											<h4>John D.</h4>
+											<p>3 months user</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="review">
+								<div class="review-content">
+									<p>"The personalization is incredible. It's like having a personal trainer who knows exactly what I need."</p>
+									<div class="reviewer">
+										<img src="images/reviewer3.jpg" alt="Mike R." class="avatar">
+										<div class="reviewer-info">
+											<h4>Mike R.</h4>
+											<p>1 year user</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
 				<!-- Wrapper -->
 					<section id="wrapper">
@@ -55,11 +185,11 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="AI Personalization" /></a>
 									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">AI-Powered Personalization</h2>
+										<p>Experience workouts tailored specifically to your goals, fitness level, and available equipment. Our advanced AI understands your needs and creates the perfect routine for you.</p>
+										<a href="#features" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -67,11 +197,11 @@
 						<!-- Two -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/pic02.jpg" alt="Adaptive Workouts" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Smart Workout Adaptation</h2>
+										<p>Watch as your workout plans evolve with your progress. GymGPT learns from your feedback and automatically adjusts difficulty and exercises to keep you challenged and motivated.</p>
+										<a href="#features" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -79,105 +209,102 @@
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/pic03.jpg" alt="Exercise Library" /></a>
 									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">Extensive Exercise Library</h2>
+										<p>Access hundreds of exercises with detailed instructions, form guides, and video demonstrations. Whether you're at home or in the gym, find the perfect exercises for your workout.</p>
+										<a href="#features" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+						<!-- Four / Features Section -->
+						<section id="features" class="wrapper alt style1">
+							<div class="inner">
+								<h2 class="major">Key Features</h2>
+								<p>Discover why GymGPT is the ultimate AI workout companion for your fitness journey.</p>
+								<section class="features">
+									<article>
+										<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+										<h3 class="major">Personalized Plans</h3>
+										<p>Get custom workout plans that adapt to your progress, schedule, and available equipment.</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+										<h3 class="major">Progress Tracking</h3>
+										<p>Monitor your improvements with detailed analytics and achievement tracking.</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+										<h3 class="major">Expert Guidance</h3>
+										<p>Receive form tips and exercise alternatives from our AI training assistant.</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										<h3 class="major">Community Support</h3>
+										<p>Connect with other users, share achievements, and stay motivated together.</p>
+									</article>
+								</section>
+							</div>
+						</section>
 
 					</section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
+				<!-- App Showcase Section -->
+				<section id="app-showcase" class="wrapper style1">
+					<div class="inner">
+						<h2 class="major">App Screenshots</h2>
+						<div class="showcase-grid">
+							<div class="showcase-item">
+								<img src="images/app-screen1.png" alt="Workout Planning Screen">
+								<h3>Smart Workout Planning</h3>
+								<p>Create and customize your workout plans with AI assistance</p>
+							</div>
+							<div class="showcase-item">
+								<img src="images/app-screen2.png" alt="Exercise Library Screen">
+								<h3>Exercise Library</h3>
+								<p>Browse through hundreds of exercises with detailed instructions</p>
+							</div>
+							<div class="showcase-item">
+								<img src="images/app-screen3.png" alt="Progress Tracking Screen">
+								<h3>Progress Tracking</h3>
+								<p>Monitor your fitness journey with detailed analytics</p>
+							</div>
+							<div class="showcase-item">
+								<img src="images/app-screen4.png" alt="Community Features Screen">
+								<h3>Community Features</h3>
+								<p>Connect with other fitness enthusiasts and share your progress</p>
+							</div>
 						</div>
-					</section>
+					</div>
+				</section>
 
+				<!-- App Preview Section -->
+				<section id="app-preview" class="wrapper style-overlap">
+					<div class="inner">
+						<div class="phone-mockup">
+							<img src="images/phone-frame.png" class="phone-frame" alt="Phone Frame">
+							<img src="images/app-screenshot.png" class="app-screenshot" alt="App Screenshot">
+							<div class="store-badges">
+								<a href="#" class="store-badge">
+									<img src="images/google-play-badge.png" alt="Get it on Google Play">
+								</a>
+								<a href="#" class="store-badge">
+									<img src="images/app-store-badge.png" alt="Download on App Store">
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
+			<script src="assets/js/vendor/jquery.min.js"></script>
+			<script src="assets/js/vendor/jquery.scrollex.min.js"></script>
+			<script src="assets/js/vendor/browser.min.js"></script>
+			<script src="assets/js/vendor/breakpoints.min.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/animations.js"></script>
 
 	</body>
 </html>

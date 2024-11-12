@@ -142,4 +142,9 @@
 
 			});
 
+	// Add this to ensure the banner text is visible
+	window.addEventListener('load', function() {
+		document.body.classList.remove('is-preload');
+	});
+
 })(jQuery);

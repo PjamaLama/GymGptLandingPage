@@ -1,0 +1,83 @@
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Section Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Phone Mockup Styles */
+.style-overlap {
+    position: relative;
+    padding: 6em 0;
+    background: linear-gradient(45deg, #4c5c96 50%, #312450 50%);
+}
+
+.phone-mockup {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+.phone-frame {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.app-screenshot {
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    width: 88%;
+    height: 88%;
+    object-fit: cover;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.store-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.store-badge img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.store-badge:hover img {
+    transform: scale(1.05);
+}
+
+/* Section Styles */
+section {
+    position: relative;
+    z-index: 1;
+    background: rgba(49, 36, 80, 0.7);
+    transition: background 0.3s ease;
+}
+
+/* Simple hover effect */
+.wrapper:hover .inner {
+    transform: translateY(-5px);
+}
+
+.inner {
+    transition: transform 0.3s ease;
+}
