@@ -1,310 +1,398 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>GymGPT - AI Powered Workout Generator</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/animations.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="assets/js/animations.js" defer></script>
+		<link rel="stylesheet" href="assets/css/animation.css" />
+		<!-- Add Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
-	<body class="is-preload">
+	<body class="flex flex-col min-h-screen">
+		<!-- Header -->
+		<header class="sticky top-0 z-50 w-full border-b bg-white">
+			<div class="container flex h-16 items-center justify-between">
+				<a href="#" class="flex items-center space-x-2">
+					<img src="images/gymgpt-logo.png" alt="GymGPT Logo" width="40" height="40" />
+					<span class="font-bold text-xl">GymGPT</span>
+				</a>
+				
+				<div class="flex items-center gap-4">
+					<!-- Mobile Download Button -->
+					<a href="https://play.google.com/store/apps/details?id=com.gymgpts.app&pcampaignid=web_share" 
+					   class="md:hidden px-4 py-2 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors shimmer-button">
+						Download
+					</a>
+					
+				<!-- Mobile menu button -->
+				<button id="mobile-menu-button" class="md:hidden p-2">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
+				</div>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+				<!-- Desktop Navigation -->
+				<nav class="hidden md:flex gap-6 items-center">
+					<a href="#how-it-works" class="text-sm font-medium hover:underline underline-offset-4">How It Works</a>
+					<a href="#why-gymgpt" class="text-sm font-medium hover:underline underline-offset-4">Why GymGPT</a>
+					<a href="#features" class="text-sm font-medium hover:underline underline-offset-4">Features</a>
+					<a href="#reviews" class="text-sm font-medium hover:underline underline-offset-4">Reviews</a>
+					<a href="https://play.google.com/store/apps/details?id=com.gymgpts.app&pcampaignid=web_share" 
+					   class="ml-4 px-4 py-2 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors shimmer-button">
+						Download Now
+					</a>
+				</nav>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<div class="header-content">
-							<div class="logo">
-								<img src="assets/images/branding/gymgpt-logo.png" alt="GymGPT Logo" height="40">
-							</div>
-							<h1><a href="index.html">GymGPT</a></h1>
+				<!-- Mobile Navigation -->
+				<div id="mobile-menu" class="hidden fixed inset-x-0 top-0 bg-white z-50">
+					<div class="flex flex-col">
+						<div class="flex justify-between items-center p-4 border-b">
+							<span class="font-bold text-xl">Menu</span>
+							<button id="mobile-menu-close" class="p-2">
+								<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+								</svg>
+							</button>
 						</div>
-						<nav class="main-nav">
-							<ul>
-								<li><a href="#how-it-works">How It Works</a></li>
-								<li><a href="#why-gymgpt">Why GymGPT</a></li>
-								<li><a href="#features">Features</a></li>
-								<li><a href="#reviews">Reviews</a></li>
-								<li><a href="#download" class="button primary">Download Now</a></li>
-							</ul>
+						<nav class="flex flex-col p-4 space-y-4">
+							<a href="#how-it-works" class="text-lg font-medium">How It Works</a>
+							<a href="#why-gymgpt" class="text-lg font-medium">Why GymGPT</a>
+							<a href="#features" class="text-lg font-medium">Features</a>
+							<a href="#reviews" class="text-lg font-medium">Reviews</a>
+							<a href="https://play.google.com/store/apps/details?id=com.gymgpts.app&pcampaignid=web_share" 
+							   class="inline-block px-6 py-3 text-center text-white bg-blue-500 rounded-md font-medium text-sm hover:bg-blue-600 transition-colors shimmer-button">
+								Download Now
+							</a>
 						</nav>
-						<nav class="mobile-nav">
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#how-it-works">How It Works</a></li>
-								<li><a href="#why-gymgpt">Why GymGPT</a></li>
-								<li><a href="#features">Features</a></li>
-								<li><a href="#reviews">Reviews</a></li>
-								<li><a href="#download">Download</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="banner-content">
-								<div class="banner-text">
-									<div class="logo"><span class="icon fa-dumbbell"></span></div>
-									<h2>Welcome to GymGPT</h2>
-									<p>Your Personal AI Workout Generator - Get customized workout plans powered by artificial intelligence</p>
-									<ul class="actions">
-										<li><a href="#download" class="button primary">Download Now</a></li>
-									</ul>
-								</div>
-								<div class="banner-image mobile-center">
-									<img src="images/app-screen6.png" alt="GymGPT App Screenshot" />
-								</div>
-							</div>
-						</div>
-					</section>
-
-				<!-- How It Works Section -->
-				<section id="how-it-works" class="wrapper style2">
-					<div class="inner">
-						<h2 class="major">How It Works</h2>
-						<div class="steps-container">
-							<div class="step">
-								<span class="step-number">1</span>
-								<h3>Download & Sign Up</h3>
-								<p>Create your account and tell us about your fitness goals</p>
-							</div>
-							<div class="step">
-								<span class="step-number">2</span>
-								<h3>AI Analysis</h3>
-								<p>Our AI analyzes your goals, fitness level, and available equipment</p>
-							</div>
-							<div class="step">
-								<span class="step-number">3</span>
-								<h3>Get Your Plan</h3>
-								<p>Receive your personalized workout plan instantly</p>
-							</div>
-							<div class="step">
-								<span class="step-number">4</span>
-								<h3>Track & Adapt</h3>
-								<p>Track your progress while AI adapts your plan</p>
-							</div>
-						</div>
 					</div>
-				</section>
-
-				<!-- Why GymGPT Section -->
-				<section id="why-gymgpt" class="wrapper style3">
-					<div class="inner">
-						<h2 class="major">Why Choose GymGPT</h2>
-						<div class="grid">
-							<div class="reason">
-								<span class="icon solid fa-brain"></span>
-								<h3>AI-Powered Intelligence</h3>
-								<p>Advanced algorithms create perfectly tailored workouts</p>
-							</div>
-							<div class="reason">
-								<span class="icon solid fa-sync"></span>
-								<h3>Adaptive Programming</h3>
-								<p>Workouts that evolve with your progress</p>
-							</div>
-							<div class="reason">
-								<span class="icon solid fa-mobile-alt"></span>
-								<h3>Easy to Use</h3>
-								<p>Intuitive interface designed for seamless experience</p>
-							</div>
-							<div class="reason">
-								<span class="icon solid fa-chart-line"></span>
-								<h3>Results Driven</h3>
-								<p>Proven methodology for reaching your fitness goals</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Reviews Section -->
-				<section id="reviews" class="wrapper style1">
-					<div class="inner">
-						<h2 class="major">What Users Say</h2>
-						<div class="reviews-grid">
-							<div class="review">
-								<div class="review-content">
-									<p>"GymGPT has completely transformed my workout routine. The AI suggestions are spot-on!"</p>
-									<div class="reviewer">
-										<img src="images/reviewer1.jpg" alt="Sarah M." class="avatar">
-										<div class="reviewer-info">
-											<h4>Sarah M.</h4>
-											<p>6 months user</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="review">
-								<div class="review-content">
-									<p>"As a busy professional, having an AI trainer in my pocket is exactly what I needed."</p>
-									<div class="reviewer">
-										<img src="images/reviewer2.jpg" alt="John D." class="avatar">
-										<div class="reviewer-info">
-											<h4>John D.</h4>
-											<p>3 months user</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="review">
-								<div class="review-content">
-									<p>"The personalization is incredible. It's like having a personal trainer who knows exactly what I need."</p>
-									<div class="reviewer">
-										<img src="images/reviewer3.jpg" alt="Mike R." class="avatar">
-										<div class="reviewer-info">
-											<h4>Mike R.</h4>
-											<p>1 year user</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Wrapper -->
-					<section id="wrapper">
-
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="AI Personalization" /></a>
-									<div class="content">
-										<h2 class="major">AI-Powered Personalization</h2>
-										<p>Experience workouts tailored specifically to your goals, fitness level, and available equipment. Our advanced AI understands your needs and creates the perfect routine for you.</p>
-										<a href="#features" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="Adaptive Workouts" /></a>
-									<div class="content">
-										<h2 class="major">Smart Workout Adaptation</h2>
-										<p>Watch as your workout plans evolve with your progress. GymGPT learns from your feedback and automatically adjusts difficulty and exercises to keep you challenged and motivated.</p>
-										<a href="#features" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="Exercise Library" /></a>
-									<div class="content">
-										<h2 class="major">Extensive Exercise Library</h2>
-										<p>Access hundreds of exercises with detailed instructions, form guides, and video demonstrations. Whether you're at home or in the gym, find the perfect exercises for your workout.</p>
-										<a href="#features" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four / Features Section -->
-						<section id="features" class="wrapper alt style1">
-							<div class="inner">
-								<h2 class="major">Key Features</h2>
-								<p>Discover why GymGPT is the ultimate AI workout companion for your fitness journey.</p>
-								<section class="features">
-									<article>
-										<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										<h3 class="major">Personalized Plans</h3>
-										<p>Get custom workout plans that adapt to your progress, schedule, and available equipment.</p>
-									</article>
-									<article>
-										<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										<h3 class="major">Progress Tracking</h3>
-										<p>Monitor your improvements with detailed analytics and achievement tracking.</p>
-									</article>
-									<article>
-										<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										<h3 class="major">Expert Guidance</h3>
-										<p>Receive form tips and exercise alternatives from our AI training assistant.</p>
-									</article>
-									<article>
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-										<h3 class="major">Community Support</h3>
-										<p>Connect with other users, share achievements, and stay motivated together.</p>
-									</article>
-								</section>
-							</div>
-						</section>
-
-					</section>
-
-				<!-- App Showcase Section -->
-				<section id="app-showcase" class="wrapper style1">
-					<div class="inner">
-						<h2 class="major">App Screenshots</h2>
-						<div class="showcase-grid">
-							<div class="showcase-item">
-								<img src="images/app-screen1.png" alt="Workout Planning Screen">
-								<h3>Smart Workout Planning</h3>
-								<p>Create and customize your workout plans with AI assistance</p>
-							</div>
-							<div class="showcase-item">
-								<img src="images/app-screen2.png" alt="Exercise Library Screen">
-								<h3>Exercise Library</h3>
-								<p>Browse through hundreds of exercises with detailed instructions</p>
-							</div>
-							<div class="showcase-item">
-								<img src="images/app-screen3.png" alt="Progress Tracking Screen">
-								<h3>Progress Tracking</h3>
-								<p>Monitor your fitness journey with detailed analytics</p>
-							</div>
-							<div class="showcase-item">
-								<img src="images/app-screen4.png" alt="Community Features Screen">
-								<h3>Community Features</h3>
-								<p>Connect with other fitness enthusiasts and share your progress</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- App Preview Section -->
-				<section id="app-preview" class="wrapper style-overlap">
-					<div class="inner">
-						<div class="phone-mockup">
-							<img src="images/phone-frame.png" class="phone-frame" alt="Phone Frame">
-							<img src="images/app-screenshot.png" class="app-screenshot" alt="App Screenshot">
-							<div class="store-badges">
-								<a href="#" class="store-badge">
-									<img src="images/google-play-badge.png" alt="Get it on Google Play">
-								</a>
-								<a href="#" class="store-badge">
-									<img src="images/app-store-badge.png" alt="Download on App Store">
-								</a>
-							</div>
-						</div>
-					</div>
-				</section>
+				</div>
 			</div>
+		</header>
 
-		<!-- Scripts -->
-			<script src="assets/js/vendor/jquery.min.js"></script>
-			<script src="assets/js/vendor/jquery.scrollex.min.js"></script>
-			<script src="assets/js/vendor/browser.min.js"></script>
-			<script src="assets/js/vendor/breakpoints.min.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/animations.js"></script>
+		<main class="flex-1">
+			<!-- Hero Section -->
+			<section class="w-full pt-12 pb-36 md:pt-24 md:pb-48 lg:pt-32 lg:pb-56 animated-bg">
+				<div class="container px-4 md:px-6 relative z-10">
+					<div class="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+						<div class="flex flex-col justify-center space-y-4">
+							<div class="space-y-2">
+								<h1 class="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
+									Your AI Powered Workout Assistant
+								</h1>
+								<p class="max-w-[600px] text-gray-100 md:text-xl">
+									Get customized workout plans powered by artificial intelligence. Track your progress and achieve your fitness goals.
+								</p>
+							</div>
+							<div class="flex flex-col gap-2 min-[400px]:flex-row">
+								<a href="https://play.google.com/store/apps/details?id=com.gymgpts.app&pcampaignid=web_share" 
+								   class="inline-block px-6 py-3 text-blue-500 bg-white rounded-md font-medium text-sm hover:bg-blue-50 transition-colors shimmer-button">
+									Download on Play Store
+								</a>
+							</div>
+						</div>
+						<div class="flex items-center justify-center lg:justify-end">
+							<div class="relative w-[280px] md:w-[400px] translate-y-24 z-10">
+								<img src="images/app-screen1.png" 
+									 alt="App Interface Screenshot" 
+									 class="rounded-2xl" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- How It Works Section -->
+			<section id="how-it-works" class="w-full py-12 md:py-24 bg-white relative mt-[-100px] md:mt-[-120px]">
+				<div class="container px-4 md:px-6">
+					<h2 class="text-3xl font-bold tracking-tighter text-center mb-12 pt-20 md:pt-24">How It Works</h2>
+					<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+						<div class="flex flex-col items-center text-center">
+							<div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold mb-4">1</div>
+							<h3 class="text-lg font-semibold mb-2">Download & Sign Up</h3>
+							<p class="text-gray-600">Create your account and tell us about your fitness goals</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold mb-4">2</div>
+							<h3 class="text-lg font-semibold mb-2">AI Analysis</h3>
+							<p class="text-gray-600">Our AI analyzes your goals and available equipment</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold mb-4">3</div>
+							<h3 class="text-lg font-semibold mb-2">Get Your Plan</h3>
+							<p class="text-gray-600">Receive your personalized workout plan instantly</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<div class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold mb-4">4</div>
+							<h3 class="text-lg font-semibold mb-2">Track & Adapt</h3>
+							<p class="text-gray-600">Track your progress while AI adapts your plan</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Why GymGPT Section -->
+			<section id="why-gymgpt" class="w-full py-12 md:py-24 bg-gray-50">
+				<div class="container px-4 md:px-6">
+					<h2 class="text-3xl font-bold tracking-tighter text-center mb-12">Why Choose GymGPT</h2>
+					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+						<div class="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Smart AI Technology</h3>
+							<p class="text-gray-600">Advanced algorithms create personalized workout plans tailored to your goals</p>
+						</div>
+						<div class="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Privacy Focused</h3>
+							<p class="text-gray-600">Your data is secure and never shared with third parties</p>
+						</div>
+						<div class="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Time Efficient</h3>
+							<p class="text-gray-600">Get workout plans instantly, no waiting or scheduling required</p>
+						</div>
+						<div class="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Proven Results</h3>
+							<p class="text-gray-600">Join thousands of satisfied users who've achieved their fitness goals</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Features Grid -->
+			<section id="features" class="w-full py-12 md:py-24 bg-white">
+				<div class="container px-4 md:px-6">
+					<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+						<div class="flex flex-col items-center text-center">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Workout Tracking</h3>
+							<p class="text-sm text-gray-600">Track your daily workouts and monitor your progress over time</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Progress Visualization</h3>
+							<p class="text-sm text-gray-600">View detailed charts of your fitness journey</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">AI Analysis</h3>
+							<p class="text-sm text-gray-600">Get insights and recommendations from our AI</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<svg class="h-12 w-12 mb-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<h3 class="text-lg font-semibold mb-2">Goal Setting</h3>
+							<p class="text-sm text-gray-600">Set and track your fitness goals</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Track Progress Section -->
+			<section class="w-full py-12 md:py-24 bg-gray-50">
+				<div class="container px-4 md:px-6">
+					<div class="grid gap-12 lg:grid-cols-2 items-center">
+						<div class="space-y-4">
+							<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Track Your Progress</h2>
+							<p class="text-gray-600 md:text-xl">
+								Monitor your fitness journey with detailed analytics and progress tracking. Our AI-powered insights help you
+								understand your performance and optimize your workouts.
+							</p>
+							<ul class="space-y-2">
+								<li class="flex items-center gap-2">
+									<div class="h-2 w-2 rounded-full bg-blue-500"></div>
+									<span>Detailed workout analytics</span>
+								</li>
+								<li class="flex items-center gap-2">
+									<div class="h-2 w-2 rounded-full bg-blue-500"></div>
+									<span>Progress visualization</span>
+								</li>
+								<li class="flex items-center gap-2">
+									<div class="h-2 w-2 rounded-full bg-blue-500"></div>
+									<span>AI-powered recommendations</span>
+								</li>
+								<li class="flex items-center gap-2">
+									<div class="h-2 w-2 rounded-full bg-blue-500"></div>
+									<span>Goal tracking</span>
+								</li>
+							</ul>
+						</div>
+						<div class="relative">
+							<img src="images/app-screen6.png" alt="Progress Tracking Screenshot" 
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Stats Section
+			<section class="w-full py-12 md:py-24 bg-white">
+				<div class="container px-4 md:px-6">
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+						<div class="space-y-2">
+							<h3 class="text-3xl md:text-4xl font-bold">300,000+</h3>
+							<p class="text-gray-600">Active Users</p>
+						</div>
+						<div class="space-y-2">
+							<h3 class="text-3xl md:text-4xl font-bold">1M+</h3>
+							<p class="text-gray-600">Workouts Completed</p>
+						</div>
+						<div class="space-y-2">
+							<h3 class="text-3xl md:text-4xl font-bold">500+</h3>
+							<p class="text-gray-600">5-Star Reviews</p>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<!-- Testimonials -->
+			<section id="reviews" class="w-full py-12 md:py-24 bg-gray-50">
+				<div class="container px-4 md:px-6">
+					<h2 class="text-3xl font-bold tracking-tighter text-center mb-12">Our Users Love GymGPT</h2>
+					<div class="grid md:grid-cols-3 gap-8">
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<div class="space-y-4">
+								<div class="flex text-yellow-400">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+								</div>
+								<p class="text-gray-600">
+									"GymGPT has transformed my workout routine. The AI suggestions are incredibly helpful and keep me motivated!"
+								</p>
+								<div class="flex items-center gap-4">
+									<img src="images/matt.jpeg" alt="User Avatar" class="w-10 h-10 rounded-full object-cover" />
+									<div>
+										<p class="font-semibold">Matthew Young</p>
+										<p class="text-sm text-gray-600">3 months user</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<div class="space-y-4">
+								<div class="flex text-yellow-400">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+								</div>
+								<p class="text-gray-600">
+									"The personalization is incredible. It's like having a personal trainer who knows exactly what I need."
+								</p>
+								<div class="flex items-center gap-4">
+									<img src="images/marnu.PNG" alt="User Avatar" class="w-10 h-10 rounded-full object-cover" />
+									<div>
+										<p class="font-semibold">Marnu van Niekerk</p>
+										<p class="text-sm text-gray-600">6 months user</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<div class="space-y-4">
+								<div class="flex text-yellow-400">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+								</div>
+								<p class="text-gray-600">
+									"As a busy professional, having an AI trainer in my pocket is exactly what I needed."
+								</p>
+								<div class="flex items-center gap-4">
+									<img src="images/nadine.PNG" alt="User Avatar" class="w-10 h-10 rounded-full object-cover" />
+									<div>
+										<p class="font-semibold">Nadine Rochat</p>
+										<p class="text-sm text-gray-600">3 months user</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Final CTA -->
+			<section class="w-full py-12 md:py-24 bg-blue-500">
+				<div class="container px-4 md:px-6 text-center">
+					<h2 class="text-3xl font-bold tracking-tighter text-white mb-4">Start Your Fitness Journey Today</h2>
+					<p class="text-gray-100 mb-8 md:text-xl">
+						Download GymGPT and transform your workouts with the power of AI
+					</p>
+					<div class="flex justify-center">
+						<a href="https://play.google.com/store/apps/details?id=com.gymgpts.app&pcampaignid=web_share" 
+						   class="inline-block px-6 py-3 text-blue-500 bg-white rounded-md font-medium text-sm hover:bg-blue-50 transition-colors shimmer-button">
+							Download on Play Store
+						</a>
+					</div>
+				</div>
+			</section>
+
+		</main>
+
+		<footer class="border-t bg-background">
+			<div class="container py-10 md:h-24 md:py-0">
+				<div class="flex flex-col items-center gap-4">
+					<div class="flex gap-6">
+						<a href="#" class="text-sm text-gray-600 hover:text-gray-900">Terms</a>
+						<a href="#" class="text-sm text-gray-600 hover:text-gray-900">Privacy</a>
+						<a href="#" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
+				</div>
+					<p class="text-sm text-gray-500">© 2024 GymGPT. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Smooth scrolling
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					const section = document.querySelector(this.getAttribute('href'));
+					if (section) {
+						section.scrollIntoView({
+							behavior: 'smooth'
+						});
+						// Close mobile menu if open
+						document.getElementById('mobile-menu').classList.add('hidden');
+					}
+				});
+			});
+
+			// Mobile menu functionality
+			const mobileMenu = document.getElementById('mobile-menu');
+			const mobileMenuButton = document.getElementById('mobile-menu-button');
+			const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+			mobileMenuButton.addEventListener('click', () => {
+				mobileMenu.classList.remove('hidden');
+			});
+
+			mobileMenuClose.addEventListener('click', () => {
+				mobileMenu.classList.add('hidden');
+			});
+		</script>
 
 	</body>
 </html>

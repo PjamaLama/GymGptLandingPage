@@ -1,0 +1,94 @@
+.animated-bg {
+  position: relative;
+  overflow: hidden;
+  background: #123;
+}
+
+.animated-bg::before,
+.animated-bg::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 2em;
+  content: '.';
+  mix-blend-mode: screen;
+  animation: 44s -27s move infinite ease-in-out alternate;
+}
+
+.animated-bg::before {
+  text-shadow: 
+    1em 0.5em 3px hsla(50, 100%, 50%, 0.9),
+    -0.5em -1em 3px hsla(210, 100%, 50%, 0.9),
+    1em 0.25em 3px hsla(120, 100%, 50%, 0.9),
+    -1em 0.75em 3px hsla(290, 100%, 50%, 0.9),
+    0.5em -0.5em 3px hsla(160, 100%, 50%, 0.9),
+    -0.75em 1em 3px hsla(330, 100%, 50%, 0.9),
+    0.75em -0.25em 3px hsla(240, 100%, 50%, 0.9),
+    -0.25em -0.75em 3px hsla(40, 100%, 50%, 0.9),
+    1.25em 0.5em 3px hsla(180, 100%, 50%, 0.9),
+    -0.5em 1.25em 3px hsla(300, 100%, 50%, 0.9);
+  animation-duration: 44s;
+  animation-delay: -27s;
+}
+
+.animated-bg::after {
+  text-shadow: 
+    -0.5em -1em 3px hsla(0, 100%, 50%, 0.9),
+    1em 0.5em 3px hsla(100, 100%, 50%, 0.9),
+    -1em 1em 3px hsla(200, 100%, 50%, 0.9),
+    0.5em -0.5em 3px hsla(300, 100%, 50%, 0.9),
+    -0.75em 0.5em 3px hsla(150, 100%, 50%, 0.9),
+    1em -1em 3px hsla(250, 100%, 50%, 0.9),
+    0.75em 0.75em 3px hsla(70, 100%, 50%, 0.9),
+    -0.5em -0.5em 3px hsla(320, 100%, 50%, 0.9),
+    1em 0em 3px hsla(180, 100%, 50%, 0.9),
+    0em 1em 3px hsla(220, 100%, 50%, 0.9);
+  animation-duration: 43s;
+  animation-delay: -32s;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(8) translateX(-10px);
+  }
+  to {
+    transform: rotate(360deg) scale(12) translateX(10px);
+  }
+}
+
+/* Updated shimmer effect for buttons */
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  transform: skewX(-20deg) translateX(-100%);
+  animation: shimmerEffect 3s infinite;
+}
+
+@keyframes shimmerEffect {
+  0% {
+    transform: skewX(-20deg) translateX(-100%);
+  }
+  50% {
+    transform: skewX(-20deg) translateX(100%);
+  }
+  100% {
+    transform: skewX(-20deg) translateX(100%);
+  }
+} 
